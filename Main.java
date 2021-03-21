@@ -132,7 +132,7 @@ class Main {
 
       else if (userInput2.equals("no")){
         System.out.println("Okay then, see you next time!");
-        System.out.println("Goodbye " + name);
+        System.out.println("Goodbye " + name + "!");
         break;
       }
 
