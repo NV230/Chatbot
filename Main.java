@@ -133,11 +133,13 @@ class Main {
       else if (userInput2.equals("no")){
         System.out.println("Okay then, see you next time!");
         System.out.println("Goodbye " + name);
+        break;
       }
 
       else{
         System.out.println("Okay then, see you next time!");
         System.out.println("Goodbye " + name + "!");
+        break;
       }
 
     }
@@ -175,6 +177,7 @@ class Main {
     }
 
     else if (response1.equals("no")){
+      System.out.println("Too bad, you still have to chat!");
       init = false;
     }
 
