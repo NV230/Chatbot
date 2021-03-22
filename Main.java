@@ -5,16 +5,19 @@ class Main {
   
   public static void main(String[] args) {
 
+    // Our boolean statements used in the while loops
     boolean online = true;
     boolean statement1 = true;
     boolean statement2 = true;
     boolean statement3 = true;
+
+    // User Input Variables
     String userInput;
     String userInput1;
     String userInput2;
     String userInput3;
 
-
+    // Prints out Page Break Escape Character
     System.out.println("\f");
     Scanner sc = new Scanner(System.in);
     
@@ -25,24 +28,30 @@ class Main {
     // Our greeting method which greets the user
     greeting(name);
     
-    // Asks if the user is ready to begin the program.
+    // Asks if the user is ready to begin the program, initiates beginning method.
     beginning();
     
-    // Asks user basketball-related questons //
+    // Asks user basketball-related questons with the methods
     favoriteTeam();
     favoritePlayer();
 
+    // Our array which has four different statements that the console places when it doesn't receive wanted input
     String [] array = {"Alrighty then.", "Glad to hear your opinion.", "Oh that's neat.", "Awesome!"};
+    
+    // Creates an object random to get random values
     Random random = new Random();
 
-    // randomly selects an index from the array
+    // Randomly selects an index from the array
     int select = random.nextInt(array.length); 
+
 
     while (online == true)
     
     {
       System.out.println("Do you like watching basketball?");
       userInput = sc.nextLine();
+      // Converts everything into lowercase
+      userInput = userInput.toLowerCase();
       indicator();
 
       if(userInput.equals("yes"))
@@ -68,16 +77,17 @@ class Main {
     {
       System.out.println("Who do you consider to be the greatest basketball player of all time?");
       userInput1 = sc.nextLine();
+      userInput1 = userInput1.toLowerCase();
       indicator();
 
-      if(userInput1.equals("LeBron James"))
+      if(userInput1.equals("lebron james"))
       {
         System.out.println("Yup, you are absoutely correct.");
         statement1 = false;
         break;
       }
 
-      else if(userInput1.equals("Michael Jordan"))
+      else if(userInput1.equals("michael jordan"))
       {
         System.out.println("Nope, you are incorrect.  It's LeBron.");
         statement1 = false;
@@ -95,16 +105,17 @@ class Main {
     {
       System.out.println("Who will win MVP in the NBA this season?");
       userInput1 = sc.nextLine();
+      userInput1 = userInput1.toLowerCase();
       indicator();
 
-      if(userInput1.equals("Nikola Jokic"))
+      if(userInput1.equals("nikola jokic"))
       {
         System.out.println("Yup, the Joker is wrecking havoc this season.");
         statement2 = false;
         break;
       }
 
-      else if(userInput1.equals("Damian Lillard"))
+      else if(userInput1.equals("damian lillard"))
       {
         System.out.println("Nope, Dame isn't even the best point guard in the league, that honor belongs to Steph.");
         statement2 = false;
@@ -122,6 +133,7 @@ class Main {
     {
       System.out.println("Oh it looks likes we are out of time.  Do you want to discuss one more question?");
       userInput2 = sc.nextLine();
+      userInput2 = userInput2.toLowerCase();
       indicator();
 
       if (userInput2.equals("yes")){
@@ -148,9 +160,10 @@ class Main {
   {
     System.out.println("Who do you think will win the NBA finals?");
     userInput3 = sc.nextLine();
+    userInput3 = userInput3.toLowerCase();
     indicator();
 
-    if (userInput3.equals("Los Angeles Clippers")){
+    if (userInput3.equals("los angeles clippers")){
       System.out.println("Yeah, I think the Clippers will comeback and win the title");
       System.out.println("Anyways, it was nice chatting with you, " + name + ", I hope you have a nice day!");
       break;
@@ -170,6 +183,7 @@ class Main {
     System.out.println("Are you ready to begin?");
     Scanner sc = new Scanner(System.in);
     String response1 = sc.nextLine();
+    response1 = response1.toLowerCase();
     indicator();
     boolean init = true;  
     if (response1.equals("yes")){
@@ -178,7 +192,7 @@ class Main {
 
     else if (response1.equals("no")){
       System.out.println("Too bad, you still have to chat!");
-      init = false;
+      init = true;
     }
 
     else{
@@ -189,14 +203,18 @@ class Main {
 
   }
 
+  // Indicator method just acts as a separation device between program and user.
   public static void indicator(){
       System.out.println(">>>");
   }
 
+  // Method that uses the name varibale to print a greeting.
   public static void greeting(String name) {
       System.out.println("Hello "+ name + "," + " I hope you are having a nice day!");
       indicator();
   }
+
+  // Method that runs no matter what.
   public static void favoriteTeam(){
     System.out.println("What is your favorite basketball team?");
     Scanner sc = new Scanner(System.in);
@@ -204,18 +222,21 @@ class Main {
     indicator();
     System.out.println("That is my favorite team as well");
   }
+
+  // Asks the user for their favorite player
   public static void favoritePlayer(){
     System.out.println("Who is your favorite player?");
     Scanner sc = new Scanner(System.in);
     String favoritePlayer = sc.nextLine();
+    favoritePlayer = favoritePlayer.toLowerCase();
     indicator();
     
-    if (favoritePlayer.equals("Stephen Curry")) {
+    if (favoritePlayer.equals("stephen curry")) {
       System.out.println("Oh really? My favorite player is Stephen Curry as well!");
       indicator();
   }
     else{
-      System.out.println("Oh, I am not familiar with who this player is but I look forward to reading more about them!");
+      System.out.println("Oh, I am not familiar with who this player is but I look forward to learning more about them!");
       indicator();
     }
 
